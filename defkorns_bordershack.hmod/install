@@ -1,0 +1,6 @@
+# 
+# DefKorns Borders Hack - v0.1 Feb 02, 2018
+#
+transfer_default
+cfg_DefKorns_bordershack_enabled='y'
+return 1

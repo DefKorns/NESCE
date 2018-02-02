@@ -1,0 +1,4 @@
+rm -r "$rootfs/borders/"
+
+# Marks this mod as uninstalled
+unset cfg_DefKorns_bordershack_enabled
