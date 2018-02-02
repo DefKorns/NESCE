@@ -4,4 +4,4 @@ open hackchi2 and edit the "Command line" to include --use-decorative-frame /var
 eg: --use-decorative-frame /var/lib/hakchi/rootfs/borders/13_mana_4_3
 
 Synchronize your games/links
-Et voil√°!
+Et voil·!

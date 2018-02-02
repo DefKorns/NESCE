@@ -1,0 +1,13 @@
+  local bgpath="$mountpoint/var/lib/hakchi/squashfs/usr/share/backgrounds"
+  local destbgpath
+  
+  if [ -d "$bgpath" ]; then
+    destbgpath="$mountpoint/media/hakchi/borders"
+    if [ ! -d "$destbgpath" ] && touch "$mountpoint/media/hakchi/"; then
+      mkdir -p "$destbgpath"
+      cp -r $bgpath/* "$destbgpath/"
+    fi
+
+    [ -d "$destbgpath" ] && mount_bind "$destbgpath" "$bgpath"
+  fi
+

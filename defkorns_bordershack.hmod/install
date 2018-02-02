@@ -1,6 +1,9 @@
 # 
-# DefKorns Borders Hack - v0.1 Feb 02, 2018
+# DefKorns Desktop Hack - v0.2 Feb 02, 2018
 #
+local script="p8025_defkornsborderhack"
+copy "$script" "$preinitpath/"
+chmod +x "$rootfs/etc/preinit.d/$script"
 transfer_default
 cfg_DefKorns_bordershack_enabled='y'
 return 1
