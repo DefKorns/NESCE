@@ -1,5 +1,6 @@
 # 
 # DefKorns Desktop Hack - v1.0 Feb 03, 2018
 #
+transfer_default
 cfg_DefKorns_bordershack_enabled='y'
 return 1
