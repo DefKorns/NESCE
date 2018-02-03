@@ -1,0 +1,12 @@
+  local destpath
+  local path_bg="$mountpoint/usr/share/backgrounds"
+
+  if [ -d "$path_bg" ]; then
+    destpath="$mountpoint/media/hakchi/backgrounds"
+    if [ ! -d "$destpath" ] && touch "$mountpoint/media/hakchi/"; then
+      mkdir -p "$destpath"
+      copy "$path_bg/" "$destpath/"
+    fi
+    [ -d "$destpath" ] && mount_bind "$destpath" "$path_bg" && overmount "/media/hakchi/backgrounds/" "usr/share/backgrounds"
+  fi
+  

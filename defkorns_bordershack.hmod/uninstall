@@ -1,4 +1,4 @@
-rm "$preinitpath/p8025_defkornsborderhack"
+rm "$preinitpath/p8026_defkornsborderhack"
 
 # Marks this mod as uninstalled
 unset cfg_DefKorns_bordershack_enabled

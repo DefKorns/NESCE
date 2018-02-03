@@ -1,7 +1,5 @@
-Put your custom backgrounds on the defkorns_bordershack.hmod/borders folder before synching
+Custom Backgrounds
 
-open hackchi2 and edit the "Command line" to include --use-decorative-frame /var/lib/hakchi/rootfs/borders/[YOUR BACKGROUND]_4_3 (or [YOUR BACKGROUND]_pixel_perfect)
-eg: --use-decorative-frame /var/lib/hakchi/rootfs/borders/13_mana_4_3
+Install Hmod and add your background folders to USB:\hakchi\backgrounds
 
-Synchronize your games/links
-Et voilá!
+Set you background globally
