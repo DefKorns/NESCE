@@ -3,10 +3,8 @@
 #
 # Script based on DNA64 BoxArt_Patch & DanTheMan827 custom_boxart
 # Thanks to therourke, bslenul and KMFDManic
-local script="S52defkornsdesktophack"
-copy "$script" "$rootfs/etc/init.d/"
-chmod +x "$rootfs/etc/init.d/$script"
 transfer_default
+chmod +x "$rootfs/etc/init.d/$script"
 cfg_DefKorns_desktophack_enabled='y'
 cp -r "$rootfs/boxart" "$mountpoint/media/hakchi/"
 return 1

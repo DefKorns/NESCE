@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=/bin/clover-canoe-shvc-wr -rom /usr/share/games/CLV-P-SAAHE/CLV-P-SAAHE.sfrom --volume 100 -rollback-snapshot-period 600 -filter 2 -magfilter 3
+Exec=/bin/clover-canoe-shvc-wr -rom /usr/share/games/CLV-P-SAAHE/CLV-P-SAAHE.sfrom --volume 100 -rollback-snapshot-period 600 --no-smooth
 Path=/var/lib/clover/profiles/0//CLV-P-SAAHE
 Name=Super Metroid
 Icon=/usr/share/games/CLV-P-SAAHE/CLV-P-SAAHE.png

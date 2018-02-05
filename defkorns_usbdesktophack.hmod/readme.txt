@@ -18,6 +18,7 @@ Includes:
 - USB-Host Suport
 - Fixed Non USB Support
 - Fixed Synching problems with dual boot
+- Fixed original games inside folders issue
 
 Install and synchronize games.
 

@@ -1,4 +1,3 @@
-
 rm -fr "/etc/init.d/S52defkornsdesktophack"
 rm -fr "/var/lib/hakchi/rootfs/boxart"
 rm -fr "/var/lib/hakchi/rootfs/S52defkornsdesktophack"

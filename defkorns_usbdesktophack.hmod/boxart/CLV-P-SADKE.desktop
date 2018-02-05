@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=/bin/clover-canoe-shvc-wr -rom /usr/share/games/CLV-P-SADKE/CLV-P-SADKE.sfrom --volume 65 -rollback-snapshot-period 600 -filter 2 -magfilter 3
+Exec=/bin/clover-canoe-shvc-wr -rom /usr/share/games/CLV-P-SADKE/CLV-P-SADKE.sfrom --volume 65 -rollback-snapshot-period 600 --no-smooth
 Path=/var/lib/clover/profiles/0//CLV-P-SADKE
 Name=Star Fox 2
 Icon=/usr/share/games/CLV-P-SADKE/CLV-P-SADKE.png

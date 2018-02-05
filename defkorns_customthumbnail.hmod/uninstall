@@ -1,0 +1,6 @@
+local script="S52defkornscustomthumbs"
+rm "$rootfs/etc/init.d/$script"
+rm -r "$rootfs/customthumbs/"
+
+# Marks this mod as uninstalled
+unset cfg_DefKorns_customthumbnails_enabled

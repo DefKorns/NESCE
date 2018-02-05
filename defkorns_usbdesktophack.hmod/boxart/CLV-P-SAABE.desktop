@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=/bin/clover-canoe-shvc-wr -rom /usr/share/games/CLV-P-SAABE/CLV-P-SAABE.sfrom --volume 80 -rollback-snapshot-period 600 -filter 2 -magfilter 3
+Exec=/bin/clover-canoe-shvc-wr -rom /usr/share/games/CLV-P-SAABE/CLV-P-SAABE.sfrom --volume 80 -rollback-snapshot-period 600 --no-smooth
 Path=/var/lib/clover/profiles/0//CLV-P-SAABE
 Name=F-Zero
 Icon=/usr/share/games/CLV-P-SAABE/CLV-P-SAABE.png

@@ -1,0 +1,12 @@
+# 
+# DefKorns Desktop Hack - v2.4 Jan 15, 2018
+#
+# Script based on DNA64 BoxArt_Patch & DanTheMan827 custom_boxart
+# Thanks to bslenul and KMFDManic
+local script="S52defkornscustomthumbs"
+copy "$script" "$rootfs/etc/init.d/"
+chmod +x "$rootfs/etc/init.d/$script"
+transfer_default
+cfg_DefKorns_customthumbnails_enabled='y'
+cp -r "$rootfs/customthumbs" "$mountpoint/media/hakchi/customthumbs"
+return 1

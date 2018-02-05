@@ -26,10 +26,7 @@ ls  -l "$squashfs$gamepath" | grep 'CLV-P-' | awk '{ print $9 }' | while read ga
 			mount -o bind "$rootfs/boxart/${gamecode}_small.png" "$squashfs$gamepath/${gamecode}/${gamecode}_small.png"
 		fi
 		if [ -f "$rootfs/boxart/$gamecode.desktop" ]; then
-			cp -r "$rootfs/boxart/$gamecode.desktop" "$rootfs$gamepath/${gamecode}/${gamecode}.desktop"
+			mount -o bind "$rootfs/boxart/$gamecode.desktop" "$squashfs$gamepath/${gamecode}/${gamecode}.desktop"
 		fi
 	fi
 done < /dev/stdin
-
-
-

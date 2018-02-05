@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=/bin/clover-canoe-shvc-wr -rom /usr/share/games/CLV-P-SADGE/CLV-P-SADGE.sfrom --volume 65 -rollback-snapshot-period 600 -filter 2 -magfilter 3 -boost-fx 8 -no-lowlatency -output-dir /var/lib/clover/profiles/0/
+Exec=/bin/clover-canoe-shvc-wr -rom /usr/share/games/CLV-P-SADGE/CLV-P-SADGE.sfrom --volume 65 -rollback-snapshot-period 600 --no-smooth -boost-fx 8 -no-lowlatency -output-dir /var/lib/clover/profiles/0/
 Path=/var/lib/clover/profiles/0//CLV-P-SADGE
 Name=Star Fox
 Icon=/usr/share/games/CLV-P-SADGE/CLV-P-SADGE.png
