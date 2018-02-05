@@ -1,3 +1,8 @@
+# 
+# DefKorns Desktop Hack - v2.8 Feb 05, 2018
+#
+# Script based on DNA64 BoxArt_Patch & DanTheMan827 custom_boxart
+# Thanks to therourke, bslenul and KMFDManic
 rm -fr "/etc/init.d/S52defkornsdesktophack"
 rm -fr "/var/lib/hakchi/rootfs/boxart"
 rm -fr "/var/lib/hakchi/rootfs/S52defkornsdesktophack"

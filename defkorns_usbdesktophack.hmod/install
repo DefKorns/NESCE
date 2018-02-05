@@ -1,10 +1,10 @@
 # 
-# DefKorns Desktop Hack - v2.7 Jan 16, 2018
+# DefKorns Desktop Hack - v2.8 Feb 05, 2018
 #
 # Script based on DNA64 BoxArt_Patch & DanTheMan827 custom_boxart
 # Thanks to therourke, bslenul and KMFDManic
 transfer_default
-chmod +x "$rootfs/etc/init.d/$script"
+#chmod +x "$rootfs/etc/init.d/$script"
 cfg_DefKorns_desktophack_enabled='y'
-cp -r "$rootfs/boxart" "$mountpoint/media/hakchi/"
+copy "$rootfs/boxart" "$mountpoint/media/$modname/"
 return 1

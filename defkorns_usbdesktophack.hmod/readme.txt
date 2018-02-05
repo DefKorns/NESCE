@@ -24,5 +24,5 @@ Install and synchronize games.
 
 Enjoy!
 
-v2.7 Jan 16, 2018
+v2.8 Feb 05, 2018
 DefKorns

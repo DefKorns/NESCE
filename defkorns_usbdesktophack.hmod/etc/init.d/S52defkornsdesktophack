@@ -1,32 +1,17 @@
-#!/bin/sh
-
-# Init scripts are executed with "start" argument when system boots and with "stop" argument during shutdown
-# So we need to check that it's boot state, not shutdown
-[ -z "$1" ] || [ "$1" == "start" ] || exit 0
-
-source "/etc/preinit"
-script_init
-USBDIR=/media/hakchi/boxart/
-ls  -l "$squashfs$gamepath" | grep 'CLV-P-' | awk '{ print $9 }' | while read gamecode; do
-	if [ -d "$USBDIR" ]; then
-		if [ -f "/media/hakchi/boxart/$gamecode.png" ]; then
-			cp -r "/media/hakchi/boxart/$gamecode.png" "/media/hakchi/games/${gamecode}/${gamecode}.png"
-		fi
-		if [ -f "/media/hakchi/boxart/${gamecode}_small.png" ]; then
-			cp -r "/media/hakchi/boxart/${gamecode}_small.png" "/media/hakchi/games/${gamecode}/${gamecode}_small.png"
-		fi
-		if [ -f "/media/hakchi/boxart/$gamecode.desktop" ]; then
-			cp -r "/media/hakchi/boxart/$gamecode.desktop" "/media/hakchi/games/${gamecode}/${gamecode}.desktop"
-		fi
-	else
-		if [ -f "$rootfs/boxart/$gamecode.png" ]; then
-			mount -o bind "$rootfs/boxart/$gamecode.png" "$squashfs$gamepath/${gamecode}/${gamecode}.png"
-		fi
-		if [ -f "$rootfs/boxart/${gamecode}_small.png" ]; then
-			mount -o bind "$rootfs/boxart/${gamecode}_small.png" "$squashfs$gamepath/${gamecode}/${gamecode}_small.png"
-		fi
-		if [ -f "$rootfs/boxart/$gamecode.desktop" ]; then
-			mount -o bind "$rootfs/boxart/$gamecode.desktop" "$squashfs$gamepath/${gamecode}/${gamecode}.desktop"
-		fi
-	fi
-done < /dev/stdin
+defkornsBoxart(){
+  local usb_path="$mountpoint/media/$modname/boxart"
+  local nand_path="$mountpoint/$rootfs/boxart"
+  
+  ls  -l "$squashfs$gamepath" | grep 'CLV-P-' | awk '{ print $9 }' | while read gamecode; do
+  if [ -d "$usb_path" ]; then
+    mount_bind "$usb_path/$gamecode.png" "$squashfs$gamepath/$gamecode/$gamecode.png"
+	mount_bind "$usb_path/$gamecode_small.png" "$squashfs$gamepath/$gamecode/$gamecode_small.png"
+	mount_bind "$usb_path/$gamecode.desktop" "$squashfs$gamepath/$gamecode/$gamecode.desktop"
+  else
+    mount_bind "$nand_path/$gamecode.png" "$squashfs$gamepath/$gamecode/$gamecode.png"
+	mount_bind "$nand_path/$gamecode_small.png" "$squashfs$gamepath/$gamecode/$gamecode_small.png"
+	mount_bind "$nand_path/$gamecode.desktop" "$squashfs$gamepath/$gamecode/$gamecode.desktop"
+  fi
+}
+defkornsBoxart
+  
