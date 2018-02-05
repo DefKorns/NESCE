@@ -1,17 +1,17 @@
 defkornsBoxart(){
-  local usb_path="$mountpoint/media/$modname/boxart"
-  local nand_path="$mountpoint/$rootfs/boxart"
+local usb_path="$mountpoint/media/$modname/boxart"
+local nand_path="$mountpoint/$rootfs/boxart"
   
-  ls  -l "$squashfs$gamepath" | grep 'CLV-P-' | awk '{ print $9 }' | while read gamecode; do
-  if [ -d "$usb_path" ]; then
-    mount_bind "$usb_path/$gamecode.png" "$squashfs$gamepath/$gamecode/$gamecode.png"
-	mount_bind "$usb_path/$gamecode_small.png" "$squashfs$gamepath/$gamecode/$gamecode_small.png"
-	mount_bind "$usb_path/$gamecode.desktop" "$squashfs$gamepath/$gamecode/$gamecode.desktop"
-  else
-    mount_bind "$nand_path/$gamecode.png" "$squashfs$gamepath/$gamecode/$gamecode.png"
-	mount_bind "$nand_path/$gamecode_small.png" "$squashfs$gamepath/$gamecode/$gamecode_small.png"
-	mount_bind "$nand_path/$gamecode.desktop" "$squashfs$gamepath/$gamecode/$gamecode.desktop"
-  fi
+ls  -l "$squashfs$gamepath" | grep 'CLV-P-' | awk '{ print $9 }' | while read gamecode; do
+	if [ -d "$usb_path" ]; then
+		mount_bind "$usb_path/$gamecode.png" "$squashfs$gamepath/$gamecode/$gamecode.png"
+		mount_bind "$usb_path/$gamecode_small.png" "$squashfs$gamepath/$gamecode/$gamecode_small.png"
+		mount_bind "$usb_path/$gamecode.desktop" "$squashfs$gamepath/$gamecode/$gamecode.desktop"
+	else
+		mount_bind "$nand_path/$gamecode.png" "$squashfs$gamepath/$gamecode/$gamecode.png"
+		mount_bind "$nand_path/$gamecode_small.png" "$squashfs$gamepath/$gamecode/$gamecode_small.png"
+		mount_bind "$nand_path/$gamecode.desktop" "$squashfs$gamepath/$gamecode/$gamecode.desktop"
+	fi
 }
 defkornsBoxart
   
