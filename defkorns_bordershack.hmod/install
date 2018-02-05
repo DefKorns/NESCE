@@ -1,6 +1,10 @@
 # 
-# DefKorns Desktop Hack - v1.0 Feb 03, 2018
+# DefKorns Desktop Hack - v1.1 Feb 05, 2018
 #
+# Revisioned and improved by DanTheMan827
+# Special thanks to KMFDManic for putting up with me and u/Pretendtious for testing.
 transfer_default
+local destpath="$mountpoint/media/$modname/backgrounds"
+copy "$squashfs/usr/share/backgrounds/" "$destpath/"
 cfg_DefKorns_bordershack_enabled='y'
 return 1

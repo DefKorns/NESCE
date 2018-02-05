@@ -1,3 +1,8 @@
+# 
+# DefKorns Desktop Hack - v1.1 Feb 05, 2018
+#
+# Revisioned and improved by DanTheMan827
+# Special thanks to KMFDManic for putting up with me and u/Pretendtious for testing.
 rm "$preinitpath/p8026_defkornsborderhack"
 
 # Marks this mod as uninstalled
