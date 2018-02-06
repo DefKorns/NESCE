@@ -1,0 +1,11 @@
+all: out/defkorns_customthumbnail.hmod
+
+out/defkorns_customthumbnail.hmod:
+	mkdir -p out/
+	cd defkorns_customthumbnails.hmod/; tar -czvf "../$@" *
+	touch "$@"
+
+clean:
+	-rm -rf out/
+
+.PHONY: clean

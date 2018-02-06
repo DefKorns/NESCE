@@ -1,0 +1,11 @@
+all: out/defkorns_bordershack_v1.1.hmod
+
+out/defkorns_bordershack_v1.1.hmod:
+	mkdir -p out/
+	cd defkorns_bordershack.hmod/; tar -czvf "../$@" *
+	touch "$@"
+
+clean:
+	-rm -rf out/
+
+.PHONY: clean

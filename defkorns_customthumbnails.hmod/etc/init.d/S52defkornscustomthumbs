@@ -1,0 +1,14 @@
+defkornsCustomthumbs(){
+local usb_path="$mountpoint/media/$modname/customthumbs"
+local nand_path="$mountpoint/$rootfs/customthumbs"
+local game_path="$mountpoint/$rootfs/usr/share/game"
+local usb_game="$mountpoint/media/$modname/games"
+  
+ls  -l "$game_path" | grep 'CLV-S-000' | awk '{ print $9 }' | while read smallthumbs; do
+ if [ -d "$usb_path" ]; then
+  mount_bind "$usb_path/$smallthumbs_small.png" "$usb_games/$smallthumbs/$smallthumbs_small.png"
+ else
+  mount_bind "$nand_path/$smallthumbs_small.png" "$game_path/$smallthumbs/$smallthumbs_small.png"
+ fi
+}
+defkornsCustomthumbs
