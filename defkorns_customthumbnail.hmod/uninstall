@@ -1,6 +1,10 @@
-local script="S52defkornscustomthumbs"
-rm "$rootfs/etc/init.d/$script"
-rm -r "$rootfs/customthumbs/"
+
+# 
+# DefKorns Custom Thumbnails - v1.5 Feb 06, 2018
+#
+rm -fr "$rootfs/etc/init.d/S52defkornscustomthumbs"
+rm -fr "$rootfs/customthumbs"
+rm -fr "$rootfs/S52defkornscustomthumbs"
 
 # Marks this mod as uninstalled
 unset cfg_DefKorns_customthumbnails_enabled
