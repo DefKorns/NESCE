@@ -1,7 +1,0 @@
-# 
-# DefKorns Custom Thumbnails - v1.5 Feb 06, 2018
-#
-transfer_default
-cfg_DefKorns_customthumbnails_enabled='y'
-copy "$rootfs/customthumbs" "$mountpoint/media/$modname/"
-return 1
