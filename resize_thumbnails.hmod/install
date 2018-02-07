@@ -1,0 +1,15 @@
+# 
+# DefKorns Thumbnail Resizer - v1.0 Feb 07, 2018
+#
+
+scnfile=$(find $mountpoint/usr/share -name "sys_game_thumbnail.scn") && scnfile=${scnfile:${#mountpoint}}
+preinitfile=p81a8_resize_thumnbnails
+
+echo scnfile: $scnfile
+restore $scnfile
+
+sed -i -e 's/size":\[32,32\]/size":\[32,22\]/g' $rootfs$scnfile
+
+echo "overmount $scnfile" > $preinitpath/$preinitfile
+return 1
+

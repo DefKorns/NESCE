@@ -1,0 +1,6 @@
+# 
+# DefKorns Thumbnail Resizer - v1.0 Feb 07, 2018
+#
+find $rootfs/usr/share -name "sys_game_thumbnail.scn" -delete
+preinitfile=p81a8_resize_thumnbnails
+rm -f $preinitpath/$preinitfile
