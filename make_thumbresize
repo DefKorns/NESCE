@@ -1,0 +1,11 @@
+all: out/defkorns_thumbnailresizer.hmod
+
+out/defkorns_thumbnailresizer.hmod:
+	mkdir -p out/
+	cd resize_thumbnails.hmod/; tar -czvf "../$@" *
+	touch "$@"
+
+clean:
+	-rm -rf out/
+
+.PHONY: clean
