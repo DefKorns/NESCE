@@ -1,1 +1,0 @@
-Add custom borders here to NAND
