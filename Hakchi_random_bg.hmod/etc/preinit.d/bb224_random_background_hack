@@ -1,0 +1,30 @@
+random_background_hack_bind(){
+  ([ -f "$1" ] && [ -f "$2/wall.png" ]) || return 1
+ mount_bind "$1" "$2/wall.png" && echo "overmounted $1 on $2/wall.png" || return 1
+  return 0
+}
+random_background_hack(){
+  echo "starting advanced background hack..."
+
+  local bg_path="$mountpoint/media/hakchi/menu_bg"
+  [ ! -d "$bg_path" ] && bg_path="$rootfs/usr/share/random_background_hack"
+  echo "Advanced BackGround Hack: $bg_path"
+  
+  local png_file="$(ls -1 $bg_path/*.png $bg_path/*.PNG 2>/dev/null | head -$((${RANDOM} % `ls -1 $bg_path/*.png $bg_path/*.PNG 2>/dev/null | wc -l` + 1)) | tail -1)"
+  local localization="$(cat "$rootfs/etc/clover/ui")"
+  
+  if [ -f "$png_file" ]; then
+  echo "PNG files detected..."
+    
+  # NES Mini (EUR_USA)
+    random_background_hack_bind \
+      "$png_file" \
+      "$mountpoint/usr/share/clover-ui/resources/layout/asset/sprite/wallpaper" 
+
+  # SNES Mini
+    random_background_hack_bind \
+      "$png_file" \
+      "$mountpoint/usr/share/ui/$localization/resources/layout/asset/sprite/wallpaper" 	  
+
+  fi
+}

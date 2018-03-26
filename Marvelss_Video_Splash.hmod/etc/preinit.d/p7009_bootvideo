@@ -1,0 +1,20 @@
+playBootVideo(){
+
+  chmod +x $rootfs/bin/fbff
+  
+  echo 3 > /proc/sys/vm/drop_caches
+
+  dd if=/dev/zero of=/dev/fb0 #Kill Framebuffer Device
+  
+  decodepng $rootfs/etc/Hakchi_Video_Splash_Screen/pre-boot-min.png > /dev/fb0
+
+  fbff -s -u -f -x 0 -y 0  $rootfs/etc/Hakchi_Video_Splash_Screen/boot.mp4
+  
+  waitTask fbff
+  
+  echo 3 > /proc/sys/vm/drop_caches
+  
+  return 0
+}
+
+playBootVideo
