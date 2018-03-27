@@ -2,7 +2,7 @@
 Name: Easy Custom Borders
 Creator: DefKorns
 Category: UI
-Version: v1.1.b
+Version: v1.1.c
 ----------------
 ### Description
 

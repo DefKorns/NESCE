@@ -1,0 +1,10 @@
+# 
+# DefKorns Easy Custom Borders - v1.1b Mar 26, 2018
+#
+# Revisioned and improved by DanTheMan827
+# Special thanks to KMFDManic for putting up with me and u/Pretendtious for testing.
+rm "$preinitpath/p8026_defkornsborderhack"
+rm -fr "$mountpoint/var/lib/clover/backgrounds"
+
+# Marks this mod as uninstalled
+unset cfg_DefKorns_bordershack_enabled
