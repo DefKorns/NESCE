@@ -2,13 +2,13 @@ defkornsBorders(){
   local destpath="$mountpoint/media/$modname/backgrounds"
   local path_bg="$mountpoint/var/lib/clover/backgrounds"
   
+  mkdir -p "$destpath"
+  
   if ls $destpath/*; then
     mkdir -p "$path_bg"
     mount_bind "$destpath" "$path_bg"
-	copy "$squashfs/usr/share/backgrounds/" "$destpath/"
   else
     ls $path_bg/* || rmdir "$path_bg"
   fi
 }
 defkornsBorders
-  
