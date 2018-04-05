@@ -1,0 +1,5 @@
+rm -fr "$rootfs/lasttheme"
+rm -fr "$rootfs/usr/share/themes"
+
+# Marks this mod as uninstalled
+unset cfg_theme_randomizR_enabled
