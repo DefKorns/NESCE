@@ -28,7 +28,6 @@ Version: v0.0.2
 - Swingflip (Wanker)
 - Advokaten (Swedish Police)
 - Scrubmacher (Testing)
-- KMFDManic <3
 - HakchiResources Team
 
 ### Special Thanks
