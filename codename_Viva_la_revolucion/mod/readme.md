@@ -2,7 +2,7 @@
 Name: Theme RandomizR
 Creator: DefKorns
 Category: _UI
-Version: v0.0.2
+Version: v0.83.4
 ---
 ### Description
 
@@ -12,7 +12,7 @@ Version: v0.0.2
 - Install Hmod
 
 
-**USB/SD**
+**USB/SD** (UNTESTED)
 
 - Install Hmod
 - Add your themes folders to `MEDIA:\hakchi\themes`.
@@ -20,32 +20,14 @@ Version: v0.0.2
 **MAX 60 Themes** more will lead to booting issues + **C8**
 
 
-
 ### Credits and Thanks
+- Advokaten (Swedish Police)
 - CompCom (Code Revisor/Improver from the future)
 - DanTheMan827 (Code Revisor/Improver)
 - DefKorns (Developer)
-- Swingflip (Wanker)
-- Advokaten (Swedish Police)
+- madmonkey (Code Revisor/Improver)
 - Scrubmacher (Testing)
+- Swingflip (Wanker)
+
+and 
 - HakchiResources Team
-
-### Special Thanks
-
-ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME,
-ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME,
-ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME,
-ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME,
-ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME,
-ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME,
-ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME,
-ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME,
-ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME,
-ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME,
-ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME,
-ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME,
-ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME,
-ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME, ME,
-......................
-
-and specially ME ;D

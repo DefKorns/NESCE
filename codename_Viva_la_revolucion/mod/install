@@ -1,3 +1,8 @@
 transfer_default
+  copy "$rootfs/themes" "$rootfs/usr/share/themes" 
+  copy "$rootfs/bin/chmenu" "$rootfs/chmenu_backup"
+  copy "$rootfs/chmenu" "$rootfs/bin/chmenu"
+  chmod +x "$rootfs/bin/chmenu"
+  rm -fr "$rootfs/themes"
 cfg_theme_randomizR_enabled='y'
 return 1

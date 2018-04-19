@@ -1,5 +1,11 @@
-rm -fr "$rootfs/lasttheme"
+copy "$rootfs/chmenu_backup" "$rootfs/bin/chmenu"
+rm -fr "$mountpoint$profilepath/$modname/lasttheme"
 rm -fr "$rootfs/usr/share/themes"
+rm -fr "$rootfs/chmenu"
+rm -fr "$rootfs/chmenu_backup"
+chmod +x "$rootfs/bin/chmenu"
+rm -fr "/etc/preinit.d/b8024_advancedUI_randomizr"
+rm -fr "/etc/preinit.d/p8024_advancedUI_randomizr"
 
 # Marks this mod as uninstalled
 unset cfg_theme_randomizR_enabled
