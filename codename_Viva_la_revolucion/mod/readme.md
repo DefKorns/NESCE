@@ -2,7 +2,7 @@
 Name: Theme RandomizR
 Creator: DefKorns
 Category: _UI
-Version: v0.83.4
+Version: v0.84.1
 ---
 ### Description
 
