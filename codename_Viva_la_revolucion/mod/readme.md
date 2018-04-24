@@ -2,7 +2,7 @@
 Name: Theme RandomizR
 Creator: DefKorns
 Category: _UI
-Version: v0.84.1
+Version: v0.86.2
 ---
 ### Description
 
@@ -12,7 +12,7 @@ Version: v0.84.1
 - Install Hmod
 
 
-**USB/SD** (UNTESTED)
+**USB/SD**
 
 - Install Hmod
 - Add your themes folders to `MEDIA:\hakchi\themes`.
