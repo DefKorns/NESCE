@@ -1,10 +1,10 @@
 # 
-# DefKorns Easy Custom Borders - v1.3 Mar 28, 2018
-# Thanks to DanTheMan827, Hakchiresources and TheOtherGuys
+# DefKorns Easy Custom Borders - v1.5 Apr 19, 2018
+# Thanks to Hakchiresources and TheOtherGuys
 #
 transfer_default
-[ ! -d "$mountpoint/var/lib/clover/backgrounds" ] && mkdir -p "$mountpoint/var/lib/clover/backgrounds" && cp -rs "$squashfs/usr/share/backgrounds" "$mountpoint/var/lib/clover" && copy "$rootfs/backgrounds" "$mountpoint/var/lib/clover" 
+[ ! -d "$mountpoint/var/lib/clover/backgrounds" ] && copy "$rootfs/backgrounds" "$mountpoint/var/lib/clover" 
 rm -fr "$rootfs/backgrounds"
-
-cfg_DefKorns_bordershack_enabled='y'
+easyBorders
+cfg_defkorns_EasyBorders_enabled='y'
 return 1

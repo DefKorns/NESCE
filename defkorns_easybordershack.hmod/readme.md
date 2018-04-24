@@ -2,13 +2,13 @@
 Name: Easy Custom Borders
 Creator: DefKorns
 Category: UI
-Version: v1.3
+Version: v1.5
 ----------------
 ### Description
 
 **NAND**
 
-- Add your background folders to `hakchi2\user_mods\defkorns_bordershack.hmod\backgrounds`.
+- Add your background folders to `hakchi2CE\user_mods\defkorns_bordershack.hmod\backgrounds`.
 - Install Hmod
 - Set your background globally or individually `--use-decorative-frame /var/lib/clover/backgrounds/border_4_3` or `_pixel_perfect`
 
@@ -26,8 +26,4 @@ Keep in mind that all background folders in `MEDIA:\hakchi\backgrounds` must sta
 
 ### Credits and Thanks
 - DefKorns (Developer)
-- DanTheMan827 (Developer)
-- Pretendtious Testing
-- Scrubmacher SD Testing
-- KMFDManic for putting up with me
-- HakchiResources Team
+- HakchiResources Team (Simply the best)

@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 theme_randomizR() {
+=======
+theme_randomizR(){
+    
+>>>>>>> 608a130f85bdcbd208a96c763fe0ef42ab616238
   local theme_path="$mountpoint/media/$modname/themes/$sftype"
   local state_path="$mountpoint$profilepath/$modname"
   local folder="$(cat "$state_path/menu")"
@@ -6,6 +11,7 @@ theme_randomizR() {
   local active_folder="$CLV$folder"
   local last_theme="none"
   local gStorage="$(findGameStorage)"
+<<<<<<< HEAD
   local original_theme=""
   case "$sftype" in
     nes | hvc)
@@ -18,10 +24,20 @@ theme_randomizR() {
       original_theme="$mountpoint/usr/share/ui/shvc"
       ;;
     esac
+=======
+  local original_theme="$mountpoint/usr/share/ui/$sftype-$sfregion"
+    
+  if [ "$(cksum "$rootfs/bin/chmenu" | awk '{ print $1; }')" != "$(cksum "$rootfs/chmenu" | awk '{ print $1; }')" ]; then
+    copy "$rootfs/bin/chmenu" "$rootfs/chmenu_backup"
+    copy "$rootfs/chmenu" "$rootfs/bin/chmenu"
+    chmod +x "$rootfs/bin/chmenu"
+  fi
+>>>>>>> 608a130f85bdcbd208a96c763fe0ef42ab616238
 
   [ -f "$state_path/lasttheme" ] && last_theme="$(cat "$state_path/lasttheme")"
   [ ! -d "$theme_path" ] && local theme_path="$rootfs/usr/share/themes/$sftype"
   local theme="$last_theme"
+<<<<<<< HEAD
   while [ "$theme" == "$last_theme" ]; do
     local theme="$(ls -1 "$theme_path" | shuf | head -n1)"
   done
@@ -50,3 +66,29 @@ theme_randomizR() {
   done
   echo "$theme" > "$state_path/lasttheme"
 }
+=======
+  while [ "$theme" = "$last_theme" ]; do
+    local theme="$(ls -1 "$theme_path" | shuf | head -n1)"
+	#local theme="$(ls -1 $theme_path 2>/dev/null | head -$((${RANDOM} % `ls -1 $theme_path 2>/dev/null | wc -l` + 1)) | tail -1)"
+  done
+  
+  local tempDir="$(basename "$(readlink -f "/var/games")")"
+  find "$gStorage" -maxdepth 3 -type f -name "$active_folder.desktop" | sort -u | while IFS= read -r desktop_file; do
+    local theme_folder="$(cat "$desktop_file" | grep -F 'Name=' | sed -r 's/Back$//g;s/Name=//g;s/ /_/g')"
+	
+#	if [ ! -z "$theme" ]; then
+    local bindPath="$theme_path/$theme"
+#    if [ "$folder" = "$tempDir" ]; then
+#      bindPath="$theme_path/$theme_folder"
+#    fi
+    mountpoint -q "$original_theme" && umount "$original_theme"    
+    cd "$bindPath" && find -type f | while IFS= read -r tfile; do
+      [ ! -z $theme ] && [ -f "$bindPath/$tfile" ] && mount_bind "$bindPath/$tfile" "$original_theme/$tfile"
+    done
+    cd - >/dev/null
+#  fi
+	
+  done
+  echo "$theme" > "$state_path/lasttheme"
+ }
+>>>>>>> 608a130f85bdcbd208a96c763fe0ef42ab616238
