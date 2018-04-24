@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-theme_randomizR # &> /media/hakchi/theme_randomizR.log
   if [ "$(cksum "$rootfs/bin/chmenu" | awk '{ print $1; }')" != "$(cksum "$rootfs/chmenu" | awk '{ print $1; }')" ]; then
     copy "$rootfs/chmenu" "$rootfs/bin/chmenu"
     chmod +x "$rootfs/bin/chmenu"
   fi
-=======
-theme_randomizR # &> /media/hakchi/theme_randomizR.log
->>>>>>> 608a130f85bdcbd208a96c763fe0ef42ab616238
+  theme_randomizR # &> /media/hakchi/theme_randomizR.log
