@@ -1,0 +1,52 @@
+theme_randomizR() {
+  local theme_path="$mountpoint/media/$modname/themes/$sftype"
+  local state_path="$mountpoint$profilepath/$modname"
+  local folder="$(cat "$state_path/menu")"
+  local CLV="CLV-S-00"
+  local active_folder="$CLV$folder"
+  local last_theme="none"
+  local gStorage="$(findGameStorage)"
+  local original_theme=""
+  case "$sftype" in
+    nes | hvc)
+      original_theme="$mountpoint/usr/share/clover-ui"
+      ;;
+    snes)
+      original_theme="$mountpoint/usr/share/ui/$sftype-$sfregion"
+      ;;
+    shvc)
+      original_theme="$mountpoint/usr/share/ui/shvc"
+      ;;
+    esac
+
+  [ -f "$state_path/lasttheme" ] && last_theme="$(cat "$state_path/lasttheme")"
+  [ ! -d "$theme_path" ] && local theme_path="$rootfs/usr/share/themes/$sftype"
+  local theme="$last_theme"
+  while [ "$theme" == "$last_theme" ]; do
+    local theme="$(ls -1 "$theme_path" | shuf | head -n1)"
+  done
+
+  ### CHMENU SPECIFIC THEME
+   local tDir="$(find "$gStorage" -maxdepth 2 -type l -o -type d | grep "$active_folder" | sed -r 's/.*(.{3})/\1/')"
+  ### EOF CHMENU SPECIFIC THEME
+  find "$gStorage" -maxdepth 3 -type f -name "$active_folder.desktop" | sort -u | while IFS= read -r desktop_file; do
+    local theme_folder="$(cat "$desktop_file" | grep -F 'Name=' | sed -r 's/Back$//g;s/Name=//g;s/ /_/g' | awk '{print tolower($0)}')"
+    local bindPath="$theme_path/$theme"
+    ### CHMENU SPECIFIC THEME
+    if [ "$folder" = "$tDir" ]; then
+      bindPath="$theme_path/$theme_folder"
+    fi
+    ### EOF CHMENU SPECIFIC THEME
+    mountpoint -q "$original_theme" && umount "$original_theme"
+### BOOT RANDOMIZER
+#    [ ! -z $theme ] && [ -d "$bindPath" ] && mount -t overlayfs -o lowerdir="$original_theme",upperdir="$bindPath" overlayfs "$original_theme"
+### EOF BOOT RANDOMIZER
+    ### CHMENU RANDOMIZER
+    cd "$bindPath" && find -type f | while IFS= read -r tfile; do
+      [ ! -z "$theme" ] && [ -f "$bindPath/$tfile" ] && mount_bind "$bindPath/$tfile" "$original_theme/$tfile"
+    done
+    cd - >/dev/null
+    ### EOF CHMENU RANDOMIZER
+  done
+  echo "$theme" > "$state_path/lasttheme"
+}
