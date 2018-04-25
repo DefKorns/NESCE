@@ -1,5 +1,5 @@
 copy "$rootfs/chmenu_backup" "$rootfs/bin/chmenu"
-rm -fr "$mountpoint$profilepath/$modname/lasttheme"
+rm -fr "$mountpoint/$profilepath/$modname/lasttheme"
 rm -fr "$rootfs/usr/share/themes"
 rm -fr "$rootfs/chmenu"
 rm -fr "$rootfs/chmenu_backup"
