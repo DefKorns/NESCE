@@ -1,0 +1,37 @@
+theme_randomizR() {
+	local theme_path="$mountpoint/media/$modname/themes/$sftype"
+	local state_path="$mountpoint$profilepath/home-menu/save/system-save.json"
+	local tempgame="$(cat "$state_path/data")"
+	local searchquery="$tempgame | grep -E -o 'current_game_code.{0,14}' | sed 's/^.\{20\}//g' | grep -v 'CLV-S' | head 1"
+    local original_theme=""
+	local last_game=""
+
+	case $sftype in
+	nes | hvc)
+		original_theme="$mountpoint/usr/share/clover-ui"
+		;;
+	snes)
+		original_theme="$mountpoint/usr/share/ui/$sftype-$sfregion"
+		;;
+	shvc)
+		original_theme="$mountpoint/usr/share/ui/shvc"
+		;;
+	esac
+
+	[ -f "$state_path/data" ] && last_game="$searchquery"
+	[ ! -d "$theme_path" ] && local theme_path="$rootfs/usr/share/themes/$sftype"
+
+	local theme="$last_game"
+
+	while [ "$theme" == "$last_game" ]; do
+		local theme="$(ls -1 "$theme_path" | shuf | head -n1)"
+	done
+
+	local bindPath="$theme_path/$theme"
+	mountpoint -q "$original_theme" && umount "$original_theme"
+
+	cd "$bindPath" && find -type f | while IFS= read -r tfile; do
+		[ ! -z "$theme" ] && [ -f "$bindPath/$tfile" ] && mount_bind "$bindPath/$tfile" "$original_theme/$tfile"
+	done
+	cd - >/dev/null
+}
